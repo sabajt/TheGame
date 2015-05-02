@@ -136,34 +136,65 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRc-oj-ILz">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="status here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3t-Me-CY3">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="i3t-Me-CY3" firstAttribute="centerX" secondItem="m70-Ll-o1I" secondAttribute="centerX" id="Go4-Tm-n9T"/>
+                            <constraint firstItem="rRc-oj-ILz" firstAttribute="top" secondItem="m70-Ll-o1I" secondAttribute="bottom" constant="26.5" id="P3I-tm-fs2"/>
+                            <constraint firstItem="i3t-Me-CY3" firstAttribute="top" secondItem="rRc-oj-ILz" secondAttribute="bottom" constant="27.5" id="T3D-Co-jIg"/>
                             <constraint firstAttribute="centerX" secondItem="m70-Ll-o1I" secondAttribute="centerX" constant="-0.5" id="iON-cT-iZg">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="m70-Ll-o1I" firstAttribute="top" secondItem="38H-RU-1s2" secondAttribute="bottom" constant="52" id="lxB-bq-Ru4"/>
+                            <constraint firstItem="m70-Ll-o1I" firstAttribute="top" secondItem="38H-RU-1s2" secondAttribute="bottom" constant="52" id="lxB-bq-Ru4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="rRc-oj-ILz" firstAttribute="centerX" secondItem="m70-Ll-o1I" secondAttribute="centerX" constant="0.5" id="ybe-LV-Ym9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="m70-Ll-o1I"/>
+                                <exclude reference="rRc-oj-ILz"/>
+                                <exclude reference="i3t-Me-CY3"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="iON-cT-iZg"/>
                                 <exclude reference="lxB-bq-Ru4"/>
+                                <exclude reference="P3I-tm-fs2"/>
+                                <exclude reference="ybe-LV-Ym9"/>
+                                <exclude reference="Go4-Tm-n9T"/>
+                                <exclude reference="T3D-Co-jIg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="m70-Ll-o1I"/>
+                                <include reference="rRc-oj-ILz"/>
+                                <include reference="i3t-Me-CY3"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="iON-cT-iZg"/>
                                 <include reference="lxB-bq-Ru4"/>
+                                <include reference="P3I-tm-fs2"/>
+                                <include reference="ybe-LV-Ym9"/>
+                                <include reference="Go4-Tm-n9T"/>
+                                <include reference="T3D-Co-jIg"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="statusLabel" destination="i3t-Me-CY3" id="v01-J3-Wyr"/>
                         <outlet property="uidLabel" destination="m70-Ll-o1I" id="cdX-Jb-i3G"/>
                     </connections>
                 </viewController>

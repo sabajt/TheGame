@@ -7,10 +7,13 @@
 //
 
 #import "PlayerViewController.h"
+#import "TheGameClient.h"
 
 @interface PlayerViewController ()
 
+@property (copy, nonatomic) NSString* uid;
 @property (weak, nonatomic) IBOutlet UILabel *uidLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -20,7 +23,14 @@
 {
     [super viewDidLoad];
     
-    self.uidLabel.text = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    self.uid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    self.uidLabel.text = self.uid;
+    
+    [[TheGameClient sharedInstance] fetchUser:self.uid success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // success
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        // failure
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
