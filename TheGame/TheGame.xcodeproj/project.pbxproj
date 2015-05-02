@@ -16,6 +16,20 @@
 		33C913491AF529D2006088C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33C913471AF529D2006088C8 /* LaunchScreen.xib */; };
 		33C913551AF529D3006088C8 /* TheGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C913541AF529D3006088C8 /* TheGameTests.m */; };
 		33CD49161AF5400E00A8E16D /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD49151AF5400E00A8E16D /* PlayerViewController.m */; };
+		33CD491C1AF543D200A8E16D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD491B1AF543D200A8E16D /* AVFoundation.framework */; };
+		33CD491E1AF543DC00A8E16D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD491D1AF543DC00A8E16D /* CoreData.framework */; };
+		33CD49201AF543E600A8E16D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD491F1AF543E600A8E16D /* CoreLocation.framework */; };
+		33CD49221AF543EC00A8E16D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49211AF543EC00A8E16D /* CoreText.framework */; };
+		33CD49241AF543F600A8E16D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49231AF543F600A8E16D /* GLKit.framework */; };
+		33CD49261AF5440100A8E16D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49251AF5440100A8E16D /* ImageIO.framework */; };
+		33CD49281AF5441000A8E16D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49271AF5441000A8E16D /* libc++.dylib */; };
+		33CD492A1AF5442A00A8E16D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49291AF5442A00A8E16D /* libicucore.dylib */; };
+		33CD492C1AF5443700A8E16D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD492B1AF5443700A8E16D /* libz.dylib */; };
+		33CD492E1AF5444100A8E16D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD492D1AF5444100A8E16D /* OpenGLES.framework */; };
+		33CD49301AF5444A00A8E16D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD492F1AF5444A00A8E16D /* QuartzCore.framework */; };
+		33CD49321AF5445300A8E16D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49311AF5445300A8E16D /* SystemConfiguration.framework */; };
+		33CD49361AF5459400A8E16D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD49351AF5459400A8E16D /* GoogleMaps.framework */; };
+		33CD49381AF545A700A8E16D /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33CD49371AF545A700A8E16D /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +58,20 @@
 		33C913541AF529D3006088C8 /* TheGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheGameTests.m; sourceTree = "<group>"; };
 		33CD49141AF5400E00A8E16D /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
 		33CD49151AF5400E00A8E16D /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		33CD491B1AF543D200A8E16D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		33CD491D1AF543DC00A8E16D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		33CD491F1AF543E600A8E16D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		33CD49211AF543EC00A8E16D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		33CD49231AF543F600A8E16D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		33CD49251AF5440100A8E16D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		33CD49271AF5441000A8E16D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		33CD49291AF5442A00A8E16D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		33CD492B1AF5443700A8E16D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		33CD492D1AF5444100A8E16D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		33CD492F1AF5444A00A8E16D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		33CD49311AF5445300A8E16D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		33CD49351AF5459400A8E16D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		33CD49371AF545A700A8E16D /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../../Downloads/GoogleMaps-iOS-1.9.2 2/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		3DE289D8654A92A9D19AD27E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9DA700DB93F7485C675823AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D2DE00B2CC9C0C30722904 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +82,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CD49321AF5445300A8E16D /* SystemConfiguration.framework in Frameworks */,
+				33CD49301AF5444A00A8E16D /* QuartzCore.framework in Frameworks */,
+				33CD492E1AF5444100A8E16D /* OpenGLES.framework in Frameworks */,
+				33CD492C1AF5443700A8E16D /* libz.dylib in Frameworks */,
+				33CD492A1AF5442A00A8E16D /* libicucore.dylib in Frameworks */,
+				33CD49281AF5441000A8E16D /* libc++.dylib in Frameworks */,
+				33CD49261AF5440100A8E16D /* ImageIO.framework in Frameworks */,
+				33CD49241AF543F600A8E16D /* GLKit.framework in Frameworks */,
+				33CD49361AF5459400A8E16D /* GoogleMaps.framework in Frameworks */,
+				33CD49221AF543EC00A8E16D /* CoreText.framework in Frameworks */,
+				33CD49201AF543E600A8E16D /* CoreLocation.framework in Frameworks */,
+				33CD491E1AF543DC00A8E16D /* CoreData.framework in Frameworks */,
+				33CD491C1AF543D200A8E16D /* AVFoundation.framework in Frameworks */,
 				3328BBEF7C01FC3CABCBC528 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +121,8 @@
 		33C9132C1AF529D2006088C8 = {
 			isa = PBXGroup;
 			children = (
+				33CD49371AF545A700A8E16D /* GoogleMaps.bundle */,
+				33CD49351AF5459400A8E16D /* GoogleMaps.framework */,
 				33C913371AF529D2006088C8 /* TheGame */,
 				33C913511AF529D3006088C8 /* TheGameTests */,
 				33C913361AF529D2006088C8 /* Products */,
@@ -143,6 +186,18 @@
 		40B8D98D7DB9BA6B4896405B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33CD49311AF5445300A8E16D /* SystemConfiguration.framework */,
+				33CD492F1AF5444A00A8E16D /* QuartzCore.framework */,
+				33CD492D1AF5444100A8E16D /* OpenGLES.framework */,
+				33CD492B1AF5443700A8E16D /* libz.dylib */,
+				33CD49291AF5442A00A8E16D /* libicucore.dylib */,
+				33CD49271AF5441000A8E16D /* libc++.dylib */,
+				33CD49251AF5440100A8E16D /* ImageIO.framework */,
+				33CD49231AF543F600A8E16D /* GLKit.framework */,
+				33CD49211AF543EC00A8E16D /* CoreText.framework */,
+				33CD491F1AF543E600A8E16D /* CoreLocation.framework */,
+				33CD491D1AF543DC00A8E16D /* CoreData.framework */,
+				33CD491B1AF543D200A8E16D /* AVFoundation.framework */,
 				9DA700DB93F7485C675823AB /* libPods.a */,
 			);
 			name = Frameworks;
@@ -233,6 +288,7 @@
 				33C913441AF529D2006088C8 /* Main.storyboard in Resources */,
 				33C913491AF529D2006088C8 /* LaunchScreen.xib in Resources */,
 				33C913461AF529D2006088C8 /* Images.xcassets in Resources */,
+				33CD49381AF545A700A8E16D /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +421,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -399,6 +456,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -409,6 +467,10 @@
 			baseConfigurationReference = E3D2DE00B2CC9C0C30722904 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TheGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +482,10 @@
 			baseConfigurationReference = 3DE289D8654A92A9D19AD27E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TheGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
