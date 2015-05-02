@@ -8,12 +8,17 @@
 
 #import "PlayerViewController.h"
 #import "TheGameClient.h"
+#import "User.h"
 
 @interface PlayerViewController ()
 
 @property (copy, nonatomic) NSString* uid;
+@property (strong, nonatomic) User* user;
+
 @property (weak, nonatomic) IBOutlet UILabel *uidLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UIButton *createUserButton;
 
 @end
 
@@ -25,17 +30,45 @@
     
     self.uid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     self.uidLabel.text = self.uid;
+    self.statusLabel.text = @"Making network request...";
+    self.nameField.hidden = YES;
+    self.createUserButton.hidden = YES;
     
-    [[TheGameClient sharedInstance] fetchUser:self.uid success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // success
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // failure
+    [[TheGameClient sharedInstance] fetchUser:self.uid success:^(User *user) {
+        if (user)
+        {
+            self.user = user;
+            self.statusLabel.text = [NSString stringWithFormat:@"Found User: %@", user.name];
+        }
+        else
+        {
+            self.statusLabel.text = @"No user associated with device, please create one!";
+            self.nameField.hidden = NO;
+            self.createUserButton.hidden = NO;
+        }
+        
+    } failure:^(NSError *error) {
+        self.statusLabel.text = @"Failure to reach network";
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)createUserPressed:(UIButton *)sender
+{
+    NSString* name =  self.nameField.text;
+    if (!name || name.length < 1)
+    {
+        return;
+    }
+    
+    [[TheGameClient sharedInstance] createUser:self.uid name:name success:^(User *user) {
+        self.user = user;
+        self.statusLabel.text = [NSString stringWithFormat:@"Created new user: %@", user.name];
+        self.nameField.hidden = YES;
+        self.createUserButton.hidden = YES;
+        
+    } failure:^(NSError *error) {
+        self.statusLabel.text = @"Failure to create user";
+    }];
 }
 
 /*
