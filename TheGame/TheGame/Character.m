@@ -12,12 +12,10 @@
 
 + (Character *)characterFromResponse:(NSDictionary *)response
 {
-    NSDictionary* data = response[@"data"];
-    
-    NSString* name = data[@"name"];
-    NSNumber* level = data[@"level"];
-    NSNumber* classId = data[@"class_id"];
-    NSNumber* userID = data[@"user_id"];
+    NSString* name = response[@"name"];
+    NSNumber* level = response[@"level"];
+    NSNumber* classId = response[@"class_id"];
+    NSNumber* userID = response[@"user_id"];
     
     Character* character = [[Character alloc] init];
     character.name = name;

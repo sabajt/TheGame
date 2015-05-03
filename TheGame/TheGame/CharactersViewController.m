@@ -24,6 +24,11 @@
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 
     [[TheGameClient sharedInstance] fetchCharacters:self.user success:^(NSArray *characters) {
         self.characters = [NSMutableArray arrayWithArray:characters];

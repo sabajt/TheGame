@@ -31,6 +31,10 @@
     [[TheGameClient sharedInstance] fetchClassesWithSuccess:^(NSArray *classes) {
         self.classes = classes;
         [self.tableView reloadData];
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        CharacterClass* chClass = self.classes[indexPath.row];
+        self.selectedId = chClass.classId;
         
     } failure:^(NSError *error) {
         NSLog(@"failure fetching classes: %@", error.description);
@@ -47,6 +51,7 @@
     
     [[TheGameClient sharedInstance] createCharacterNamed:name uid:self.user.uid level:@1 classsId:self.selectedId success:^(Character *character) {
         NSLog(@"successfully created character: %@", character);
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     } failure:^(NSError *error) {
         NSLog(@"failed to create character; %@", [error description]);
