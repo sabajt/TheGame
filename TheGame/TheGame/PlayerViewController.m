@@ -9,6 +9,7 @@
 #import "PlayerViewController.h"
 #import "TheGameClient.h"
 #import "User.h"
+#import "CharactersViewController.h"
 
 @interface PlayerViewController ()
 
@@ -83,11 +84,6 @@
     }];
 }
 
-- (IBAction)charactersButtonPressed:(id)sender
-{
-    
-}
-
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -96,14 +92,10 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CharactersViewController* vc = [segue destinationViewController];
+    vc.user = self.user;
 }
-*/
 
 @end

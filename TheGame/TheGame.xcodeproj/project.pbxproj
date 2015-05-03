@@ -32,6 +32,7 @@
 		33CD49381AF545A700A8E16D /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 33CD49371AF545A700A8E16D /* GoogleMaps.bundle */; };
 		33CD493B1AF548C100A8E16D /* TheGameClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD493A1AF548C100A8E16D /* TheGameClient.m */; };
 		33CD49441AF55BA500A8E16D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD49431AF55BA500A8E16D /* User.m */; };
+		33CD49471AF6828C00A8E16D /* CharactersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD49461AF6828C00A8E16D /* CharactersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		33CD493A1AF548C100A8E16D /* TheGameClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheGameClient.m; sourceTree = "<group>"; };
 		33CD49421AF55BA500A8E16D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		33CD49431AF55BA500A8E16D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		33CD49451AF6828C00A8E16D /* CharactersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharactersViewController.h; sourceTree = "<group>"; };
+		33CD49461AF6828C00A8E16D /* CharactersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharactersViewController.m; sourceTree = "<group>"; };
 		3DE289D8654A92A9D19AD27E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9DA700DB93F7485C675823AB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D2DE00B2CC9C0C30722904 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				33CD493A1AF548C100A8E16D /* TheGameClient.m */,
 				33CD49421AF55BA500A8E16D /* User.h */,
 				33CD49431AF55BA500A8E16D /* User.m */,
+				33CD49451AF6828C00A8E16D /* CharactersViewController.h */,
+				33CD49461AF6828C00A8E16D /* CharactersViewController.m */,
 			);
 			path = TheGame;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				33CD49441AF55BA500A8E16D /* User.m in Sources */,
 				33CD49161AF5400E00A8E16D /* PlayerViewController.m in Sources */,
 				33C9133E1AF529D2006088C8 /* AppDelegate.m in Sources */,
+				33CD49471AF6828C00A8E16D /* CharactersViewController.m in Sources */,
 				33C9133B1AF529D2006088C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
