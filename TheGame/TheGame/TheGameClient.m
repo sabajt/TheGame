@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "User.h"
 #import "Character.h"
+#import "CharacterClass.h"
 
 static NSString* const kBaseURLString = @"https://location-game.herokuapp.com/api/";
 
@@ -115,5 +116,63 @@ static NSString* const kBaseURLString = @"https://location-game.herokuapp.com/ap
     
     [operation start];
 }
+
+- (void)createCharacterNamed:(NSString*)name uid:(NSString*)uid level:(NSNumber*)level classsId:(NSNumber*)classId success:(void (^)(Character* character))success failure:(void (^)(NSError *error))failure
+{
+    NSURL *url = [NSURL URLWithString:kBaseURLString];
+    AFHTTPSessionManager* manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
+    NSDictionary* params = @{@"character" : @{@"name" : name, @"user_id" : uid, @"level" : level, @"class_id" : classId}};
+    NSString* path = [[@"users" stringByAppendingPathComponent:uid] stringByAppendingPathComponent:@"characters"];
+    
+    [manager POST:path parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"create character response: %@", responseObject);
+        Character* character = [Character characterFromResponse:responseObject];
+        success(character);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"failure with error: %@", [error description]);
+        failure(error);
+    }];
+}
+
+- (void)fetchClassesWithSuccess:(void (^)(NSArray* classes))success failure:(void (^)(NSError *error))failure
+{
+    NSURL *url = [NSURL URLWithString:kBaseURLString];
+    url = [url URLByAppendingPathComponent:@"classes"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response: %@", responseObject);
+        
+        // classes found
+        if (responseObject[@"data"] != [NSNull null])
+        {
+            NSMutableArray* classes = [NSMutableArray array];
+            for (NSDictionary* response in responseObject[@"data"])
+            {
+                CharacterClass* chClass = [CharacterClass characterClassFromResponse:response];
+                [classes addObject:chClass];
+            }
+            success(classes);
+        }
+        // no classes found
+        else
+        {
+            success(nil);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure with error: %@", [error description]);
+        failure(error);
+    }];
+    
+    [operation start];
+}
+
 
 @end

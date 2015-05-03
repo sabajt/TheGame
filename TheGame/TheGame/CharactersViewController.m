@@ -9,8 +9,12 @@
 #import "CharactersViewController.h"
 #import "TheGameClient.h"
 #import "Character.h"
+#import "CreateCharacterController.h"
 
 @interface CharactersViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray* characters;
 
 @end
 
@@ -19,30 +23,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+
     [[TheGameClient sharedInstance] fetchCharacters:self.user success:^(NSArray *characters) {
-        
-        NSLog(@"success fetching characters: %@", characters);
+        self.characters = [NSMutableArray arrayWithArray:characters];
+        [self.tableView reloadData];
         
     } failure:^(NSError *error) {
-        
         NSLog(@"failure fetching characters: %@", [error description]);
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.characters count];
 }
 
-/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    Character* character = self.characters[indexPath.row];
+    cell.textLabel.text = character.name;
+    return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CreateCharacterController* vc = [segue destinationViewController];
+    vc.user = self.user;
 }
-*/
+
 
 @end

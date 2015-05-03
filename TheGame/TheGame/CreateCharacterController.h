@@ -1,5 +1,5 @@
 //
-//  CharactersViewController.h
+//  CreateCharacterController.h
 //  TheGame
 //
 //  Created by John Saba on 5/3/15.
@@ -10,7 +10,7 @@
 
 @class User;
 
-@interface CharactersViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CreateCharacterController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) User* user;
 
