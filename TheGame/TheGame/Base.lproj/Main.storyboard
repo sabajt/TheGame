@@ -403,7 +403,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dd-30-LVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749.5" y="408"/>
+            <point key="canvasLocation" x="2881.5" y="408"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="25F-AC-YAy">
+            <objects>
+                <viewController id="xqA-69-tsV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xd1-e3-KeH"/>
+                        <viewControllerLayoutGuide type="bottom" id="mPg-Nc-3xw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eis-d8-GxZ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAP!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybd-Be-EPo">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Ybd-Be-EPo" secondAttribute="centerY" constant="234.5" id="b5L-1L-6b3"/>
+                            <constraint firstAttribute="centerX" secondItem="Ybd-Be-EPo" secondAttribute="centerX" id="fo8-LT-8h8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ybd-Be-EPo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="b5L-1L-6b3"/>
+                                <exclude reference="fo8-LT-8h8"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ybd-Be-EPo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="b5L-1L-6b3"/>
+                                <include reference="fo8-LT-8h8"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LnP-J7-zKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3733.5" y="21"/>
         </scene>
         <!--Create Character-->
         <scene sceneID="P80-1G-hOG">
@@ -537,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJp-hT-MXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3469.5" y="408"/>
+            <point key="canvasLocation" x="3733.5" y="780"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="geW-MQ-LjI">

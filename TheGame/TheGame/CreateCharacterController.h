@@ -10,7 +10,7 @@
 
 @class User;
 
-@interface CreateCharacterController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CreateCharacterController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) User* user;
 

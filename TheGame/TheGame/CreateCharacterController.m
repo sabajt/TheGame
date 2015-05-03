@@ -27,6 +27,7 @@
     [super viewDidLoad];
     self.classes = [NSMutableArray array];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.nameField.delegate = self;
 
     [[TheGameClient sharedInstance] fetchClassesWithSuccess:^(NSArray *classes) {
         self.classes = classes;
@@ -79,6 +80,14 @@
 {
     CharacterClass* chClass = self.classes[indexPath.row];
     self.selectedId = chClass.classId;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
