@@ -9,6 +9,7 @@
 #import "TheGameClient.h"
 #import "AFNetworking.h"
 #import "User.h"
+#import "Character.h"
 
 static NSString* const kBaseURLString = @"https://location-game.herokuapp.com/api/";
 
@@ -75,6 +76,44 @@ static NSString* const kBaseURLString = @"https://location-game.herokuapp.com/ap
         NSLog(@"failure with error: %@", [error description]);
         failure(error);
     }];
+}
+
+- (void)fetchCharacters:(User*)user success:(void (^)(NSArray* characters))success failure:(void (^)(NSError *error))failure
+{
+    NSURL *url = [NSURL URLWithString:kBaseURLString];
+    url = [[url URLByAppendingPathComponent:@"users"] URLByAppendingPathComponent:user.uid];
+    url = [url URLByAppendingPathComponent:@"characters"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"response: %@", responseObject);
+        
+        // characters found
+        if (responseObject[@"data"] != [NSNull null])
+        {
+            NSMutableArray* characters = [NSMutableArray array];
+            for (NSDictionary* response in responseObject[@"data"])
+            {
+                Character* character = [Character characterFromResponse:response];
+                [characters addObject:character];
+            }
+            success(characters);
+        }
+        // no characters found
+        else
+        {
+            success(nil);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"failure with error: %@", [error description]);
+        failure(error);
+    }];
+    
+    [operation start];
 }
 
 @end

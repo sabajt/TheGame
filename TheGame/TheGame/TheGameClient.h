@@ -17,5 +17,7 @@
 
 - (void)fetchUser:(NSString*)uid success:(void (^)(User* user))success failure:(void (^)(NSError *error))failure;
 - (void)createUser:(NSString*)uid name:(NSString*)name success:(void (^)(User* user))success failure:(void (^)(NSError *error))failure;
+- (void)fetchCharacters:(User*)user success:(void (^)(NSArray* characters))success failure:(void (^)(NSError *error))failure;
+
 
 @end

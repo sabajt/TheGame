@@ -7,6 +7,8 @@
 //
 
 #import "CharactersViewController.h"
+#import "TheGameClient.h"
+#import "Character.h"
 
 @interface CharactersViewController ()
 
@@ -14,9 +16,18 @@
 
 @implementation CharactersViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[TheGameClient sharedInstance] fetchCharacters:self.user success:^(NSArray *characters) {
+        
+        NSLog(@"success fetching characters: %@", characters);
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"failure fetching characters: %@", [error description]);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
